@@ -1,0 +1,11 @@
+ID,Name,Age,Date of Birth,Score
+1,John Doe,30,1990-01-15,85.5
+2,Jane Smith,abc,1992-06-25,90.0
+3,Alan Turing,40,1912-06-23,NaN
+4,"Alice, Wonderland",29,1995-10-01,95.0
+5,Bob,25,1997-03-12,100
+6,Charlie,35,1985-12-31,
+7,David,22,2001-05-20,80.0,ExtraField
+8,Emma Watson,29/02/1988,78.0
+9,Fay,,1990-07-15,82.5
+10, ,42,1982-03-03,88.0
