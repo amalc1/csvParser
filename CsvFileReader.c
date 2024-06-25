@@ -2,10 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void) {
-    char buffer[1000];
+// Function to parse and process CSV data
+void  parseCSV(FILE *csvFile) {
     char *data;
-    
+    char buffer[1000];
+    // Read and print each line in the file
+    while (fgets(buffer, sizeof(buffer), csvFile)) {
+        // strtok to split each line into fields using , as delimiter
+        data = strtok(buffer, ",");
+        while (data != NULL) {
+            // Print each field
+            printf(" %s ", data);
+            // Move to the next field
+            data = strtok(NULL, ",");
+        }
+    }
+}
+
+int main(void) {    
     // Open csv file in read mode, returns null if cant open
     FILE *csvFile = fopen("sampleCsv.csv", "r");
 
@@ -18,17 +32,8 @@ int main(void) {
     printf("Parsing the CSV file\n");
     printf("-----------------------------\n");
 
-   // Read and print each line in the file
-    while (fgets(buffer, sizeof(buffer), csvFile)) {
-        // strtok to split each line into fields using , as delimiter
-        data = strtok(buffer, ",");
-        while (data != NULL) {
-            // Print each field
-            printf(" %s ", data);
-            // Move to the next field
-            data = strtok(NULL, ",");
-        }
-    }
+    // Process CSV file
+    parseCSV(csvFile);
 
     // Close the CSV file
     fclose(csvFile);
@@ -36,3 +41,9 @@ int main(void) {
 
     return 0;
 }
+
+
+
+
+
+ 
